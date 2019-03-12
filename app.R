@@ -1,16 +1,14 @@
 library("shiny")
 library("plotly")
 library("dplyr")
-library("tidyr")
-library("reshape2")
+#library("tidyr")
+ 
 
 country <- read.csv("data/2009-2013.csv", stringsAsFactors = FALSE)
 calories <- read.csv("data/sugar_calorie.csv", stringsAsFactors = FALSE)
 combine <- left_join(country, calories, by = "country")
 combine[is.na(combine)] <- 0
  
-
-
 combined <- combine%>%
   group_by(income_group)%>%
   summarise(calorie2009 = mean(calorie_X2009),calorie2010 = mean(calorie_X2010),
