@@ -109,10 +109,23 @@ server <- function(input, output) {
                        y = "Calorie") 
   })
   output$text <- renderText({
-    "As we can see from the graph, the X axis stands for the income group level, while the Y axis stands for the Calorie and Sugar intake level.
-    Using this plot we can learn more about the correlation between income level and calorie & sugar intake. It shows that when the income level 
-    increases, both the calorie and sugar intake increase."
-  })
+    
+    "The x-axis of the graph describes the income level of a country
+    in accending order while the y axis represents sugar calories or total
+    calories depending on what option the user chooses. Using this plot we can
+    learn more about the correlation between income level and calorie & sugar
+    intake.It shows that when the income level 
+    increases, both the calorie and sugar intake increase.OECD stands for the
+    Organization for Economic Co-operation and Development and includes 36 
+    countries. Most notably, the US, France, Germany, and Canada. As the bar
+    graph demonstrates, the higher the overall country income, the higher the
+    average calorie intake for its citizens. This data makes sense as those
+    in countries with more accumulated wealth or a higher GDP would have
+    the resources to invest in higher calorie diets. It is interesting to note
+    that high income countries that are nonOECD such as India and China have lower
+    calorie levels and sugar intake levels. One reason for this could be the large
+    amount of income inequality and variance in standard of living within the
+    nations."}) 
   
   # Q3 ----------------------------------
   output$table <- renderTable({
@@ -168,8 +181,7 @@ server <- function(input, output) {
   # Q4 ----------------------------------
   output$intro_crisis <- renderText({
     paragraph <- paste0("Between 2011 and 2012 there was a food crisis in Africa
-                        (Horn of Africa Crisis). Is the crisis reflected in the 
-                        sugar intake data? Was there a decrease in life-expectancy?
+                        (Horn of Africa Crisis).
                         The graph below shows the ", input$diff, " during this food crisis.
                         (Some countries don't have the data and are blank in the map.)")  
   })
@@ -205,8 +217,10 @@ server <- function(input, output) {
   output$explain_crisis <- renderText({
     if(input$diff == "Change in sugar intake") {
       paragraph <- "We can see from the map that the sugar intake in most of the
-      part in Africa was negative. Especially South Africa had the
-      biggest decrease in sugar intake." 
+      part in Africa was negative. As shown in the map, the countries that were most
+      impacted by the Horn of Africa food crisis were Mali, Mauritius, South Africa, Sudan,
+      and Zimbabwe. During the food crisis, Sudan most notably dropped in 29
+      average calories of sugar." 
     } else if(input$diff == "Change in life expectancy") {
       paragraph <- "The map shows that a country in Eastern Africa experienced the 
       biggest decrease in life expectancy which verifies the horn of 

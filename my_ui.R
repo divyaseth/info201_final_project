@@ -35,18 +35,22 @@ first_page <- tabPanel(
       textOutput("my_text"),
       
       HTML("<ul>
-           <li>X axies represents the span of life expectancy.</li>
-           <li>Y axies represents the calorie intake.</li>
+           <li>X axis represents the span of life expectancy by age.</li>
+           <li>Y axis represents the calorie intake in calories.</li>
            </ul>"),
       
       br(),
       
-      p("As we can see from the graph, there is a relatively strong correlation 
+      p("Each dot represents a country and is colored by the percentage of sugar as
+        a proportion of
+        calories that is in the diet. For instance, a dot that is orange represents
+        a country where sugar is a high percentage of the total diet in calories.
+        As we can see from the graph,there is a relatively strong correlation 
         between life expectancy and calorie intake. The countries that hava a 
         higher life expectancy tend to have high-calorie diets. However, the 
         relationship between sugar and life expectancy is not distinct. One   
         general conclusion I can draw is that high-calorie diets do contain more 
-        sugar than low-calorie diets")
+        sugar than low-calorie diets. ")
       )
     )
 )
