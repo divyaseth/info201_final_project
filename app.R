@@ -38,21 +38,19 @@ sug_cal_2010 <- left_join(cal_sd_region10, sug_sd_region10, by = "region") %>%
 colnames(sug_cal_2010)[colnames(sug_cal_2010)=="sd.x"] <- "Calorie"
 colnames(sug_cal_2010)[colnames(sug_cal_2010)=="sd.y"] <- "Sugar"
 colnames(sug_cal_2010)[colnames(sug_cal_2010)=="region"] <- "Region"
-
-
 #2011 Joined Data
 sug_cal_2011 <- left_join(cal_sd_region11, sug_sd_region11, by = "region") %>% 
   mutate(Year = "2011")
 colnames(sug_cal_2011)[colnames(sug_cal_2011)=="sd.x"] <- "Calorie"
 colnames(sug_cal_2011)[colnames(sug_cal_2011)=="sd.y"] <- "Sugar"
 colnames(sug_cal_2011)[colnames(sug_cal_2011)=="region"] <- "Region"
-
 #2012 Joined Data
 sug_cal_2012 <- left_join(cal_sd_region12, sug_sd_region12, by = "region") %>% 
   mutate(Year = "2012")
 colnames(sug_cal_2012)[colnames(sug_cal_2012)=="sd.x"] <- "Calorie"
 colnames(sug_cal_2012)[colnames(sug_cal_2012)=="sd.y"] <- "Sugar"
 colnames(sug_cal_2012)[colnames(sug_cal_2012)=="region"] <- "Region"
+
 
 #Joined All Data Frames For All Years Together
 final_table <- rbind(sug_cal_2010, sug_cal_2011, sug_cal_2012)
@@ -65,12 +63,27 @@ ui <- fluidPage(
     sidebarPanel(
     
       selectInput("Year", "Choose a Year",
-                  choices = final_table$Year)),
-      p("Use this widget to select a year of data to display in the table.
-        The data shown is the standard deviation of average calorie intake
-        data and average sugar intake data (grams).")),
+                  choices = final_table$Year,
+                 label = "Select a Year")
+      ),
+      
     mainPanel(
-          tableOutput("table")))
+          tableOutput("table"),
+          p("
+            Use this widget to select a year of data to display in the table.
+            The data shown is the standard deviation of average calorie intake
+            data and average sugar intake data (grams). Using this data we can learn more about
+            how calorie and sugar intake varies on a regional level. This is important because
+            sometimes we make assumptions about an area and what the regional food prefrences or
+            food security situation might be. This data highlights the problem with generalizing
+            this and also sheds light on how calorie intake and sugar intake may vary. Note that North America
+            across the years (primarily: Canada, US, Mexico), has a lower standard deviation for calorie intake.
+            This indicator can be used as diversity and economic growth indicator in the context of nutrition, calorie, and sugar content.
+            The variance of the standard deviation can be because of a variety of reason, including but not limited too:
+            culture, geographic growing conditions, and trade and country wealth.")
+          )
+    )
+)
 
 #Server
 server <- function(input, output){
