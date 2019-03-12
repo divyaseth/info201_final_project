@@ -3,6 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 library("plotly")
+library("DT")
 options(scipen = 999)
 
 sugar_calorie <- read.csv(file = "data/sugar_calorie.csv", stringsAsFactors = FALSE)

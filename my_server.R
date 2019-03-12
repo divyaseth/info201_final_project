@@ -128,7 +128,7 @@ server <- function(input, output) {
     nations."}) 
   
   # Q3 ----------------------------------
-  output$table <- renderTable({
+  output$table <- renderDataTable({
     # Data Wrangling
     # Code for Calorie Data Table
     cal_sd_region10 <- data %>%
@@ -195,8 +195,8 @@ server <- function(input, output) {
                country != "Saudi Arabia" & country != "Syrian Arab Republic" &
                country != "Yemen, Rep.") %>% 
       select(country, le_2011, le_2012, sugar_X2011, sugar_X2012) %>% 
-      mutate(`Change in sugar intake` = le_2011 - le_2012,
-             `Change in life expectancy` = sugar_X2011 - sugar_X2012) %>% 
+      mutate(`Change in sugar intake` = sugar_X2011 - sugar_X2012,
+             `Change in life expectancy` = le_2011 - le_2012) %>% 
       filter(!is.na(`Change in life expectancy`)) %>% 
       filter(!is.na(`Change in sugar intake`))
     data$country[[6]] <- "Ivory Coast"

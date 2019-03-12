@@ -88,7 +88,7 @@ third_page <- tabPanel(
     ),
     
     mainPanel(
-      tableOutput("table"),
+      dataTableOutput("table"),
       p("
         Use this widget to select a year of data to display in the table.
         The data shown is the standard deviation of average calorie intake
