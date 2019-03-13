@@ -19,3 +19,6 @@ The third page of our report shows a a table that has the standard deviations fo
 The final part of our report is a scenario case study which uses data analysis to analyze a real world situation. We chose to focus on the Horn of Africa food crisis from 2011-2012. Here the user can select to either see the change in life expectancy throughout Sub-Saharan Africa during this time or sugar intake. Different colors shed light on which parts of the region were impacted the most.
 
 Group Members: Yu-Chi Hsieh, Divya Seth, Linli Shi, Joanna Xiao
+
+_Data Source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
+              (Nutrition) https://www.gapminder.org/data/_
