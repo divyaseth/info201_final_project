@@ -5,8 +5,8 @@ account: shi-lin-li
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 786312
-bundleId: 1937151
+bundleId: 1937453
 url: https://shi-lin-li.shinyapps.io/INFO201-final-project/
-when: 1552499768.76742
+when: 1552506322.20316
 asMultiple: FALSE
 asStatic: FALSE

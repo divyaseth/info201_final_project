@@ -66,7 +66,7 @@ server <- function(input, output) {
            y = "Daily Calorie Intake(calories)",
            color = "Sugar Proportion(in %)"
       ) +
-      theme(axis.title = element_text(size=14, face = "bold"))
+      theme(axis.title = element_text(size=14))
     p
   })
   

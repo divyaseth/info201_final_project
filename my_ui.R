@@ -28,7 +28,7 @@ first_page <- tabPanel(
     mainPanel(
       h4("What is the relationship between life expectancy and 
          calorie intake?"), 
-      p("Does the percent of calories", em("coming from sugar"), 
+      p("Does the percent of calories", strong("coming from sugar"), 
         "affects the life expectancy?"),
       
       plotOutput("my_plot"),
@@ -49,7 +49,9 @@ first_page <- tabPanel(
         higher life expectancy tend to have high-calorie diets. However, the 
         relationship between sugar and life expectancy is not distinct. One   
         general conclusion I can draw is that high-calorie diets do contain more 
-        sugar than low-calorie diets. ")
+        sugar than low-calorie diets. "),
+      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
+(Nutrition) https://www.gapminder.org/data/"))
       )
     )
 )
@@ -98,7 +100,9 @@ second_page <- tabPanel(
         that high income countries that are nonOECD such as India and China have lower
         calorie levels and sugar intake levels. One reason for this could be the large
         amount of income inequality and variance in standard of living within the
-        nations.")
+        nations."),
+      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
+(Nutrition) https://www.gapminder.org/data/"))
     )
   )
   
@@ -130,7 +134,9 @@ third_page <- tabPanel(
         across the years (primarily: Canada, US, Mexico), has a lower standard deviation for calorie intake.
         This indicator can be used as diversity and economic growth indicator in the context of nutrition, calorie, and sugar content.
         The variance of the standard deviation can be because of a variety of reason, including but not limited too:
-        culture, geographic growing conditions, and trade and country wealth.")
+        culture, geographic growing conditions, and trade and country wealth."),
+      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
+(Nutrition) https://www.gapminder.org/data/"))
       )
     )
 )
@@ -153,7 +159,10 @@ fourth_page <- tabPanel(
       plotOutput(outputId = "africa"),
       br(),
       h4("Explanation:"),
-      textOutput(outputId = "explain_crisis")
+      textOutput(outputId = "explain_crisis"),
+      br(),
+      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
+(Nutrition) https://www.gapminder.org/data/"))
     )
   )
 )
