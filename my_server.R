@@ -1,6 +1,4 @@
 library("shiny")
-library("ggplot2")
-library("dplyr")
 server <- function(input, output) {
   
   # Q1
@@ -64,7 +62,7 @@ server <- function(input, output) {
       labs(title = paste0("Relationship between diet and life expectancy in ",
                           input$year),
            x = paste0("Life expectancy between ", input$age[1], " and ",
-                      input$age[2]),
+                      input$age[2], " years"),
            y = "Daily Calorie Intake(calories)",
            color = "Sugar Proportion(in %)"
       ) +
@@ -109,7 +107,8 @@ server <- function(input, output) {
                                                   fill = "income_group"))+
       geom_col()+ labs(title = paste( "Data of", input$feature, "in", input$select ), 
                        x = "Income Group",
-                       y = "Calorie") 
+                       y = "Calorie",
+                       fill = "Income Group") 
   })
   
   # Q3 ----------------------------------

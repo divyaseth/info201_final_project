@@ -29,18 +29,17 @@ first_page <- tabPanel(
       h4("What is the relationship between life expectancy and 
          calorie intake?"), 
       p("Does the percent of calories", em("coming from sugar"), 
-        "affect the life expectancy?"),
+        "affects the life expectancy?"),
       
       plotOutput("my_plot"),
+      br(),
+      h4("Explanation:"),
       textOutput("my_text"),
-      
       HTML("<ul>
            <li>X axis represents the span of life expectancy by age.</li>
            <li>Y axis represents the calorie intake in calories.</li>
            </ul>"),
-      
       br(),
-      
       p("Each dot represents a country and is colored by the percentage of sugar as
         a proportion of
         calories that is in the diet. For instance, a dot that is orange represents
@@ -69,8 +68,6 @@ second_page <- tabPanel(
                   c("2009", "2010", "2011", "2012","2013"),
                   selected = "2009"),
       br(),
-      
-      
       radioButtons("feature", "Feature of Interest:",
                    c("calorie",
                      "sugar"),
@@ -79,12 +76,14 @@ second_page <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("plot"), 
+      br(),
       h4("Explanation:"),
       HTML("<ul>
        <li>OECD stands for the
         Organization for Economic Co-operation and Development and includes 36 
            countries.</li>
            </ul>"),
+      br(),
       p("The x-axis of the graph describes the income level of a country
         in accending order while the y axis represents sugar calories or total
         calories depending on what option the user chooses. Using this plot we can
@@ -113,7 +112,6 @@ third_page <- tabPanel(
        </ul>"),
   sidebarLayout(
     sidebarPanel(
-      
       selectInput("Year", "Choose a Year:",
                   choices = c("2010", "2011", "2012"),
                   label = "Year of Interest:")
@@ -121,6 +119,8 @@ third_page <- tabPanel(
     
     mainPanel(
       tableOutput("table"),
+      br(),
+      h4("Explanation:"),
       p("The data shown is the standard deviation of average calorie intake
         data and average sugar intake data (grams). Using this data we can learn more about
         how calorie and sugar intake varies on a regional level. This is important because
@@ -151,12 +151,14 @@ fourth_page <- tabPanel(
     mainPanel(
       textOutput(outputId = "intro_crisis"),
       plotOutput(outputId = "africa"),
+      br(),
+      h4("Explanation:"),
       textOutput(outputId = "explain_crisis")
     )
   )
 )
 ui <- navbarPage(
-  "Diet data",
+  "Diet-Life",
   first_page,
   second_page,
   third_page,
