@@ -50,8 +50,10 @@ first_page <- tabPanel(
         relationship between sugar and life expectancy is not distinct. One   
         general conclusion I can draw is that high-calorie diets do contain more 
         sugar than low-calorie diets. "),
-      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
-(Nutrition) https://www.gapminder.org/data/"))
+      p(em("Data source:")),
+      a("Life Expectancy", href = "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008"), 
+      p(""),
+      a("Nutrition", href = "https://www.gapminder.org/data/") 
       )
     )
 )
@@ -101,8 +103,10 @@ second_page <- tabPanel(
         calorie levels and sugar intake levels. One reason for this could be the large
         amount of income inequality and variance in standard of living within the
         nations."),
-      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
-(Nutrition) https://www.gapminder.org/data/"))
+      p(em("Data source:")),
+      a("Life Expectancy", href = "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008"), 
+      p(""),
+      a("Nutrition", href = "https://www.gapminder.org/data/") 
     )
   )
   
@@ -135,8 +139,10 @@ third_page <- tabPanel(
         This indicator can be used as diversity and economic growth indicator in the context of nutrition, calorie, and sugar content.
         The variance of the standard deviation can be because of a variety of reason, including but not limited too:
         culture, geographic growing conditions, and trade and country wealth."),
-      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
-(Nutrition) https://www.gapminder.org/data/"))
+      p(em("Data source:")),
+      a("Life Expectancy", href = "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008"), 
+      p(""),
+      a("Nutrition", href = "https://www.gapminder.org/data/") 
       )
     )
 )
@@ -161,8 +167,10 @@ fourth_page <- tabPanel(
       h4("Explanation:"),
       textOutput(outputId = "explain_crisis"),
       br(),
-      p(em("Data source: (Life Expectancy) https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008
-(Nutrition) https://www.gapminder.org/data/"))
+      p(em("Data source:")),
+      a("Life Expectancy", href = "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2013&start=2008"), 
+      p(""),
+      a("Nutrition", href = "https://www.gapminder.org/data/") 
     )
   )
 )
