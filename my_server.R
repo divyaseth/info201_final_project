@@ -78,17 +78,20 @@ server <- function(input, output) {
   })
   
   # Q2 ----------------------------------
-  data[is.na(data)] <- 0
   
   combined <- data%>%
     group_by(income_group)%>%
-    summarise(calorie2009 = mean(calorie_X2009),calorie2010 = mean(calorie_X2010),
-              calorie2011 = mean(calorie_X2011),calorie2012 = mean(calorie_X2012), 
-              calorie2013 = mean(calorie_X2013),
+    summarise(calorie2009 = mean(calorie_X2009, na.rm = TRUE), 
+              calorie2010 = mean(calorie_X2010, na.rm = TRUE),
+              calorie2011 = mean(calorie_X2011, na.rm = TRUE), 
+              calorie2012 = mean(calorie_X2012, na.rm = TRUE), 
+              calorie2013 = mean(calorie_X2013, na.rm = TRUE),
               
-              sugar2009 = mean(sugar_X2009), sugar2010 = mean(sugar_X2010),
-              sugar2011 = mean(sugar_X2011), sugar2012 = mean(sugar_X2012), 
-              sugar2013 = mean(sugar_X2013)) 
+              sugar2009 = mean(sugar_X2009, na.rm = TRUE), 
+              sugar2010 = mean(sugar_X2010, na.rm = TRUE),
+              sugar2011 = mean(sugar_X2011, na.rm = TRUE), 
+              sugar2012 = mean(sugar_X2012, na.rm = TRUE), 
+              sugar2013 = mean(sugar_X2013, na.rm = TRUE)) 
   
   combined$income_group <- factor(combined$income_group, 
                                   levels = c("Low income", "Lower middle income", 
