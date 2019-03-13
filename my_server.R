@@ -108,24 +108,6 @@ server <- function(input, output) {
                        x = "Income Group",
                        y = "Calorie") 
   })
-  output$text <- renderText({
-    
-    "The x-axis of the graph describes the income level of a country
-    in accending order while the y axis represents sugar calories or total
-    calories depending on what option the user chooses. Using this plot we can
-    learn more about the correlation between income level and calorie & sugar
-    intake.It shows that when the income level 
-    increases, both the calorie and sugar intake increase.OECD stands for the
-    Organization for Economic Co-operation and Development and includes 36 
-    countries. Most notably, the US, France, Germany, and Canada. As the bar
-    graph demonstrates, the higher the overall country income, the higher the
-    average calorie intake for its citizens. This data makes sense as those
-    in countries with more accumulated wealth or a higher GDP would have
-    the resources to invest in higher calorie diets. It is interesting to note
-    that high income countries that are nonOECD such as India and China have lower
-    calorie levels and sugar intake levels. One reason for this could be the large
-    amount of income inequality and variance in standard of living within the
-    nations."}) 
   
   # Q3 ----------------------------------
   output$table <- renderDataTable({
@@ -172,6 +154,7 @@ server <- function(input, output) {
     
     #Joined All Data Frames For All Years Together
     final_table <- rbind(sug_cal_2010, sug_cal_2011, sug_cal_2012)
+    
     
     filtered_year <- final_table %>% 
       filter(Year == input$Year)
