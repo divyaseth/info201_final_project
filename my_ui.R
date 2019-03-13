@@ -120,7 +120,7 @@ third_page <- tabPanel(
     ),
     
     mainPanel(
-      dataTableOutput("table"),
+      tableOutput("table"),
       p("The data shown is the standard deviation of average calorie intake
         data and average sugar intake data (grams). Using this data we can learn more about
         how calorie and sugar intake varies on a regional level. This is important because

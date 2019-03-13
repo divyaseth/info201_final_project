@@ -110,7 +110,7 @@ server <- function(input, output) {
   })
   
   # Q3 ----------------------------------
-  output$table <- renderDataTable({
+  output$table <- renderTable({
     # Data Wrangling
     # Code for Calorie Data Table
     cal_sd_region10 <- data %>%
@@ -152,9 +152,9 @@ server <- function(input, output) {
     colnames(sug_cal_2012)[colnames(sug_cal_2012)=="sd.y"] <- "Sugar"
     colnames(sug_cal_2012)[colnames(sug_cal_2012)=="region"] <- "Region"
     
+    
     #Joined All Data Frames For All Years Together
     final_table <- rbind(sug_cal_2010, sug_cal_2011, sug_cal_2012)
-    
     
     filtered_year <- final_table %>% 
       filter(Year == input$Year)
